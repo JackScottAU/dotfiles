@@ -2,7 +2,10 @@
 
 autoload -Uz promptinit
 promptinit
-prompt adam1
+
+autoload -U colors && colors
+
+#prompt adam1
 
 setopt histignorealldups sharehistory
 
@@ -35,3 +38,6 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
+PROMPT="%{$fg[cyan]%}%n@%m%{$reset_color%} %{$fg[yellow]%}%~%{$reset_color%} %{$fg[green]%}$%{$reset_color%} "
+RPROMPT="%D %T"
