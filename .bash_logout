@@ -1,7 +1,6 @@
-# ~/.bash_logout: executed by bash(1) when login shell exits.
+## Bash log-out script. Run when an interactive session closes.
 
-# when leaving the console clear the screen to increase privacy
-
+# Clear the console (not that it's useful via SSH).
 if [ "$SHLVL" = 1 ]; then
     [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
 fi
