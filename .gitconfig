@@ -3,3 +3,5 @@
 	email = jack@jackscott.id.au
 [color]
 	ui = true
+[push]
+	default = simple
