@@ -1,7 +1,15 @@
+[core]
+	editor = nano
+
+# Specify my personal details, and indicate that they *must* be used (except where explicitly overridden per repository).
 [user]
 	name = Jack Scott
 	email = jack@jackscott.id.au
+	signingKey = 0xAC83D520
+	useConfigOnly = true
+
 [color]
 	ui = true
+
 [push]
 	default = simple
