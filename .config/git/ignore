@@ -1,3 +1,8 @@
 # Ignore SSH keys and known hosts in any repository.
 .ssh/id*
 .ssh/known_hosts
+
+# Thumbnails and folder configurations for Windows and OS X.
+desktop.ini
+.DS_Store
+Thumbs.db
