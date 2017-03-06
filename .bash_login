@@ -10,3 +10,7 @@ fi
 if [ -d "$HOME/bin" ] ; then
 	PATH="$HOME/bin:$PATH"
 fi
+if [ -d "$HOME/bin/cross-compilers" ] ; then
+        PATH="$HOME/bin/cross-compilers:$PATH"
+fi
+
