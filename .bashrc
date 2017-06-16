@@ -39,6 +39,7 @@ fi
 
 # Add my favourite aliases.
 alias lsd='ls -lA'
+alias vi='nano'		# As Per https://twitter.com/FourOctets/status/875199740878635008
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
