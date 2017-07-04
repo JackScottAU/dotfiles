@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -38,8 +39,9 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Add my favourite aliases.
+alias ll='ls -lhA'
 alias lsd='ls -lA'
-alias vi='nano'		# As Per https://twitter.com/FourOctets/status/875199740878635008
+alias vi='nano'		# As per https://twitter.com/FourOctets/status/875199740878635008
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -52,7 +54,7 @@ if ! shopt -oq posix; then
 	fi
 fi
 
-# Set a nice colour promput. Green username (red if sudoing as root), yellow hostname, cyan path.
+# Set a nice colour prompt. Green username (red if sudoing as root), yellow hostname, cyan path.
 if [[ $EUID -ne 0 ]]; then
 	PS1='\[\e[1;32m\]\u\[\e[m\]@\e[1;33m\h\[\e[m\] \[\e[1;36m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] '
 else
