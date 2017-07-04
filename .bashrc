@@ -1,3 +1,4 @@
+#!/bin/bash
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -23,8 +24,7 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
+# If set, the pattern "**" used in a pathname expansion context will match all files and zero or more directories and subdirectories.
 #shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
@@ -52,6 +52,10 @@ if ! shopt -oq posix; then
 	fi
 fi
 
-# Set a nice colour promput. Green username, yellow hostname, blue path.
-PS1='\[\e[0;32m\]\u\[\e[m\]@\e[0;33m\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] '
-export PS1="\[\e[0;32m\]\u\[\e[m\]@\e[0;33m\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] "
+# Set a nice colour promput. Green username (red if sudoing as root), yellow hostname, cyan path.
+if [[ $EUID -ne 0 ]]; then
+	PS1='\[\e[1;32m\]\u\[\e[m\]@\e[1;33m\h\[\e[m\] \[\e[1;36m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] '
+else
+	# Note we use $PWD (evaluated at runtime of prompt display) to get around non-root home directories being displayed as '~'.
+	PS1='\[\e[1;31m\]\u\[\e[m\]@\e[1;33m\h\[\e[m\] \[\e[1;36m\]$PWD\[\e[m\] \[\e[1;32m\]#\[\e[m\] '
+fi
