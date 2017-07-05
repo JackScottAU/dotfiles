@@ -42,6 +42,7 @@ fi
 alias ll='ls -lhA'
 alias lsd='ls -lA'
 alias vi='nano'		# As per https://twitter.com/FourOctets/status/875199740878635008
+alias mkdir='mkdir -p'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
