@@ -62,3 +62,6 @@ else
 	# Note we use $PWD (evaluated at runtime of prompt display) to get around non-root home directories being displayed as '~'.
 	PS1='\[\e[1;31m\]\u\[\e[m\]@\e[1;33m\h\[\e[m\] \[\e[1;36m\]$PWD\[\e[m\] \[\e[1;32m\]#\[\e[m\] '
 fi
+
+alias gpg='gpg --options ~/.config/gnupg/gpg.conf --homedir ~/.local/share/gnupg'
+alias gpg2='gpg2 --options ~/.config/gnupg/gpg.conf --homedir ~/.local/share/gnupg'
