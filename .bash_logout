@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ## Bash log-out script. Run when an interactive session closes.
 
 # Clear the console (not that it's useful via SSH).

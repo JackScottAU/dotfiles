@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ## Bash log-in script. Run when an interactive session opens.
 
 # If the .bashrc file exists, execute it.
@@ -7,13 +9,12 @@ fi
 
 # Set PATH so it includes the private scripts directory if it exists on this machine.
 # This is set here rather than in .bashrc so that the PATH doesn't get longer each time we switch user.
-if [ -d "$HOME/bin" ] ; then
+if [ -d "$HOME/bin" ]; then
 	PATH="$HOME/bin:$PATH"
 fi
-if [ -d "$HOME/bin/cross-compilers" ] ; then
+if [ -d "$HOME/bin/cross-compilers" ]; then
 	PATH="$HOME/bin/cross-compilers/bin:$PATH"
 fi
-if [ -d "$HOME/bin/cross" ] ; then
+if [ -d "$HOME/bin/cross" ]; then
 	PATH="$HOME/bin/cross/bin:$PATH"
 fi
-
