@@ -63,5 +63,6 @@ else
 	PS1='\[\e[1;31m\]\u\[\e[m\]@\e[1;33m\h\[\e[m\] \[\e[1;36m\]$PWD\[\e[m\] \[\e[1;32m\]#\[\e[m\] '
 fi
 
+# Set the config and data directories for GPG to match what the XDG specifications say they should be.
 alias gpg='gpg --options ~/.config/gnupg/gpg.conf --homedir ~/.local/share/gnupg'
 alias gpg2='gpg2 --options ~/.config/gnupg/gpg.conf --homedir ~/.local/share/gnupg'
