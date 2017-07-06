@@ -5,15 +5,17 @@
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message "")
 
-;; Define my start-up layout. bash terminal in top-left, emacs config (for now) in bottom-left, empty buffer on the right.
+(ansi-color-for-comint-mode-on)
+
+;; Define my start-up layout. bash terminal in top-left, todo list in bottom-left, empty buffer on the right.
 (defun my-startup-layout ()
  (interactive)
  (delete-other-windows)
- (split-window-horizontally) ;; -> |
- (split-window-vertically) ;;  -> --
- (term "bash")
+ (split-window-horizontally)
+ (split-window-vertically)
+ (ansi-term "bash")
  (next-multiframe-window)
- (find-file "~/.emacs.d/init.el")
+ (find-file "~/todo.org")
  (next-multiframe-window)
  (switch-to-buffer "**")
 )
