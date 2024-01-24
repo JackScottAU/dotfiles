@@ -35,6 +35,7 @@ fi
 # Add my favourite aliases.
 alias ll='ls -lhA'
 alias lsd='ls -lA'
+alias rootify='sudo -Es'
 alias vi='nano'		# As per https://twitter.com/FourOctets/status/875199740878635008
 alias mkdir='mkdir -p'
 
