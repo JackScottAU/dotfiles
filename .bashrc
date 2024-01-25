@@ -50,9 +50,13 @@ if ! shopt -oq posix; then
 	fi
 fi
 
+parse_git_branch() {
+    git -c color.ui=always branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 # Set a nice colour prompt. Green username (red if sudoing as root), yellow hostname, cyan path.
 if [[ $EUID -ne 0 ]]; then
-	PS1='\[\e[1;32m\]\u\[\e[m\]@\e[1;33m\h\[\e[m\] \[\e[1;36m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] '
+	PS1="\[\e[1;32m\]\u\[\e[m\]@\e[1;33m\h\[\e[m\] \[\e[1;36m\]\w\[\e[m\]\$(parse_git_branch) \[\e[1;32m\]\$\[\e[m\] "
 else
 	# Note we use $PWD (evaluated at runtime of prompt display) to get around non-root home directories being displayed as '~'.
 	PS1='\[\e[1;31m\]\u\[\e[m\]@\e[1;33m\h\[\e[m\] \[\e[1;36m\]$PWD\[\e[m\] \[\e[1;32m\]#\[\e[m\] '
